@@ -131,7 +131,12 @@
     <Compile Include="Migrations\201711100947074_Setup.Designer.cs">
       <DependentUpon>201711100947074_Setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711100953309_AuditAdded.cs" />
+    <Compile Include="Migrations\201711100953309_AuditAdded.Designer.cs">
+      <DependentUpon>201711100953309_AuditAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Audit.cs" />
     <Compile Include="Models\IEntityWithMaterialisation.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -203,6 +208,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711100947074_Setup.resx">
       <DependentUpon>201711100947074_Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711100953309_AuditAdded.resx">
+      <DependentUpon>201711100953309_AuditAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

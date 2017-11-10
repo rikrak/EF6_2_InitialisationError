@@ -22,5 +22,7 @@ namespace UI.Web.UnitOfWork
         }
 
         public DbSet<Person> Person { get; set; }
+        public DbSet<Audit> Audit { get; set; }
+
     }
 }

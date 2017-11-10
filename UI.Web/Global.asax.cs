@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using UI.Web.Models;
 using UI.Web.UnitOfWork;
 
 namespace UI.Web
@@ -23,6 +24,11 @@ namespace UI.Web
                 context.Database.Initialize(false);
             }
 
+            using (var context = new UnitOfWork.SampleContext())
+            {
+                context.Audit.Add(new Audit() {Description = "Application Started"});
+                context.SaveChanges();
+            }
         }
     }
 }
