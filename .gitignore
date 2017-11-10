@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/UI.Web/bin
+/.vs/EF6_2_InitialisationError/v15/.suo
+/.vs/EF6_2_InitialisationError/v15/Server/sqlite3
+/UI.Web/obj/Debug
