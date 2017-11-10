@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
-using System.Security.Cryptography.X509Certificates;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using Model;
+using UI.Web.Models;
 
 namespace UI.Web.UnitOfWork
 {
@@ -8,7 +10,15 @@ namespace UI.Web.UnitOfWork
     {
         public SampleContext() : base("DefaultConnection")
         {
-            
+            ((IObjectContextAdapter)this).ObjectContext.ObjectMaterialized += ObjectContextOnObjectMaterialized;
+
+        }
+
+        private void ObjectContextOnObjectMaterialized(object sender, ObjectMaterializedEventArgs args)
+        {
+            var materialisationTracker = args.Entity as IEntityWithMaterialisation;
+            materialisationTracker?.OnMaterlialisation();
+
         }
 
         public DbSet<Person> Person { get; set; }
